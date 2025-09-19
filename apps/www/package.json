@@ -5,10 +5,10 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "pnpm run content:build && next --port 3000",
+    "dev": "node api.js && pnpm run content:build && next --port 3000",
     "build": "pnpm run content:build && next build",
     "export": "next export",
-    "start": "next start",
+    "start": "node api.js && next start",
     "lint": "next lint",
     "clean": "rimraf node_modules",
     "pretypecheck": "next typegen",
