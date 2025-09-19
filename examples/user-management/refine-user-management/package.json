@@ -30,8 +30,8 @@
     "vite": "^4.3.1"
   },
   "scripts": {
-    "dev": "refine dev",
-    "build": "tsc && refine build",
+    "dev": "node init && refine dev",
+    "build": "node init && tsc && refine build",
     "preview": "refine start",
     "refine": "refine"
   },

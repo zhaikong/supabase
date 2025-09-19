@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "next dev --turbopack -p 8082",
-    "build": "next build && ./../../scripts/upload-static-assets.sh",
-    "start": "next start",
+    "dev": "node init && next dev --turbopack -p 8082",
+    "build": "node init && next build && ./../../scripts/upload-static-assets.sh",
+    "start": "node init && next start",
     "lint": "next lint",
     "clean": "rimraf node_modules tsconfig.tsbuildinfo .next .turbo",
     "test": "vitest --run --coverage",
@@ -20,9 +20,9 @@
     "typecheck": "tsc --noEmit",
     "prettier:check": "prettier --cache --check .",
     "prettier:write": "prettier --cache --write .",
-    "build:deno-types": "tsx scripts/deno-types.ts",
-    "build:graphql-types": "tsx scripts/download-graphql-schema.mts && pnpm graphql-codegen --config scripts/codegen.ts",
-    "build:graphql-types:watch": "pnpm graphql-codegen --config scripts/codegen.ts --watch"
+    "build:deno-types": "node init && tsx scripts/deno-types.ts",
+    "build:graphql-types": "node init && tsx scripts/download-graphql-schema.mts && pnpm graphql-codegen --config scripts/codegen.ts",
+    "build:graphql-types:watch": "node init && pnpm graphql-codegen --config scripts/codegen.ts --watch"
   },
   "dependencies": {
     "@ai-sdk/amazon-bedrock": "^3.0.0",
